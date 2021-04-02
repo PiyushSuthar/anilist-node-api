@@ -9,5 +9,18 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
-    - run: npm install
-    - run: npm run doc
+    - name: Install and Build Doc
+      run: |
+       npm install
+       npm run doc
+    - name: Commit Files
+      run: |
+        git add .
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Automated Doc Build" -a | exit 0    
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
