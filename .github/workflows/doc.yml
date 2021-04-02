@@ -8,5 +8,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: Generate Docs
       run: |
-        yarn install,
+        yarn,
         yarn doc
