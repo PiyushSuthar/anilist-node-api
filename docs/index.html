@@ -2712,10 +2712,142 @@ img {
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<p >
+			<p align="center" >
 				<h1 align="center">Anilist API 🚀</h1>
-				<p></p>
+				<p align="center">Control Your Anilist Programmatically :p</p>
 			</p>
+			<p align="center">
+				<a href="https://github.com/PiyushSuthar/anilist-node-api/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/PiyushSuthar/anilist-node-api?style=for-the-badge"></a>
+				<a href="https://github.com/PiyushSuthar/anilist-node-api/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/PiyushSuthar/anilist-node-api?style=for-the-badge"></a>
+			</p>
+			<a href="#⚠-warning" id="⚠-warning" style="color: inherit; text-decoration: none;">
+				<h2>⚠ Warning</h2>
+			</a>
+			<blockquote>
+				<p>In Development 🔧</p>
+			</blockquote>
+			<p>I won&#39;t recommend using it in production, yet... (Though I&#39;m using 🙄)</p>
+			<a href="#🔗-installation" id="🔗-installation" style="color: inherit; text-decoration: none;">
+				<h2>🔗 Installation</h2>
+			</a>
+			<p>Not yet published :p</p>
+			<p>Will do it soon.</p>
+			<a href="#⚡️-usage" id="⚡️-usage" style="color: inherit; text-decoration: none;">
+				<h2>⚡️ Usage</h2>
+			</a>
+			<p>I haven&#39;t added much methods to it yet.</p>
+			<p>You can:-</p>
+			<ul>
+				<li>Authenticate User.</li>
+				<li>Get the user&#39;s access token.</li>
+				<li>Run GraphQl Queries and Mutations.</li>
+			</ul>
+			<a href="#🕺-authenticating-a-user" id="🕺-authenticating-a-user" style="color: inherit; text-decoration: none;">
+				<h3>🕺 Authenticating a User.</h3>
+			</a>
+			<p>You&#39;ll need to install express (or perhaps <code>fastify</code>) first.</p>
+			<pre><code class="language-sh"><span style="color: #000000">yarn add express </span><span style="color: #008000"># or fastify</span>
+</code></pre>
+			<p>You&#39;ll need this package (Obviously 😆).</p>
+			<pre><code class="language-sh"><span style="color: #000000">yarn add anilist-node-api</span>
+</code></pre>
+			<p>Now we can actually write code.</p>
+			<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">AniList</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;anilist-node-api&quot;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">app</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;express&quot;</span><span style="color: #000000">)(); </span><span style="color: #008000">// Express</span>
+
+<span style="color: #008000">// Get your ClientId and ClientSecret from your Anilist Account.</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">api</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">AniList</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">client_id:</span><span style="color: #000000"> </span><span style="color: #001080">process</span><span style="color: #000000">.</span><span style="color: #001080">env</span><span style="color: #000000">.</span><span style="color: #0070C1">CLIENT_ID</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">redirect_url:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Your URL&quot;</span><span style="color: #000000"> + </span><span style="color: #A31515">&quot;/callback&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">client_secret:</span><span style="color: #000000"> </span><span style="color: #001080">process</span><span style="color: #000000">.</span><span style="color: #001080">env</span><span style="color: #000000">.</span><span style="color: #0070C1">CLIENT_SECRET</span><span style="color: #000000">,</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;/login&quot;</span><span style="color: #000000">, (</span><span style="color: #001080">req</span><span style="color: #000000">, </span><span style="color: #001080">res</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #795E26">redirect</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #008000">// This will generate an OAuth Url and redirect the user.</span>
+<span style="color: #000000">    </span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #795E26">generateAuthUrl</span><span style="color: #000000">({</span>
+<span style="color: #000000">      </span><span style="color: #001080">state:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Meet You On Mars!&quot;</span><span style="color: #000000">, </span><span style="color: #008000">// This state will be available in /callback. This must be string (Life hack: JSON.stringify())</span>
+<span style="color: #000000">    })</span>
+<span style="color: #000000">  );</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;/callback&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">req</span><span style="color: #000000">, </span><span style="color: #001080">res</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// This is very important... Read more here https://anilist.gitbook.io/anilist-apiv2-docs/overview/oauth/authorization-code-grant</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">code</span><span style="color: #000000"> = </span><span style="color: #001080">req</span><span style="color: #000000">.</span><span style="color: #001080">query</span><span style="color: #000000">.</span><span style="color: #001080">code</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">  </span><span style="color: #008000">// The state you defined while generating the Auth Url above...</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">state</span><span style="color: #000000"> = </span><span style="color: #001080">req</span><span style="color: #000000">.</span><span style="color: #001080">query</span><span style="color: #000000">.</span><span style="color: #001080">state</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">  </span><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// This will give you access token and refresh token.</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">let</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">access_token</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">refresh_token</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">expires_in</span><span style="color: #000000">,</span>
+<span style="color: #000000">    } = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #795E26">getAccessTokenFromCode</span><span style="color: #000000">(</span><span style="color: #001080">code</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">    </span><span style="color: #008000">// Store them somewhere, Probably database...</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">someDb</span><span style="color: #000000">.</span><span style="color: #795E26">store</span><span style="color: #000000">(</span><span style="color: #001080">access_token</span><span style="color: #000000">);</span>
+
+<span style="color: #000000">    </span><span style="color: #008000">// Or Just Set it up to the instance...(Security Issues)</span>
+<span style="color: #000000">    </span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #795E26">setAccessToken</span><span style="color: #000000">(</span><span style="color: #001080">access_token</span><span style="color: #000000">); </span><span style="color: #008000">// This way you can use Auth Queries of the API.</span>
+
+<span style="color: #000000">    </span><span style="color: #008000">// Probably some better response here :p</span>
+<span style="color: #000000">    </span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;OK&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  } </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">err</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Incase Error wants to meet you...</span>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">err</span><span style="color: #000000">);</span>
+<span style="color: #000000">    </span><span style="color: #008000">// Decide Yourself :p</span>
+<span style="color: #000000">    </span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #795E26">sendStatus</span><span style="color: #000000">(</span><span style="color: #098658">500</span><span style="color: #000000">).</span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;Not OK&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// And We have this method too...</span>
+<span style="color: #008000">/*</span>
+<span style="color: #008000"> * Check for available queries</span>
+<span style="color: #008000"> * at:- https://anilist.co/graphiql</span>
+<span style="color: #008000"> *</span>
+<span style="color: #008000"> * Don&#039;t worry, I&#039;ll be adding direct methods too :p</span>
+<span style="color: #008000"> *</span>
+<span style="color: #008000"> */</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;/user/:id&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">req</span><span style="color: #000000">, </span><span style="color: #001080">res</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// This query dosen&#039;t require authentication. but some do require...</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">data</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #795E26">useGraphQL</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #A31515">`</span>
+<span style="color: #A31515">query FavUser($id: Int!){</span>
+<span style="color: #A31515">  User(id: $id){</span>
+<span style="color: #A31515">    id</span>
+<span style="color: #A31515">    name</span>
+<span style="color: #A31515">  }</span>
+<span style="color: #A31515">}</span>
+<span style="color: #A31515">`</span><span style="color: #000000">,</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">      </span><span style="color: #001080">id:</span><span style="color: #000000"> </span><span style="color: #098658">947500</span><span style="color: #000000">,</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  );</span>
+
+<span style="color: #000000">  </span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #795E26">json</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #008000">// And finally let&#039;s give express ears to listen...</span>
+<span style="color: #001080">app</span><span style="color: #000000">.</span><span style="color: #795E26">listen</span><span style="color: #000000">(</span><span style="color: #098658">4000</span><span style="color: #000000">); </span><span style="color: #008000">// My prefered port :p</span>
+</code></pre>
+			<p>The methods used above are the only methods available right now.</p>
+			<p>These are more than enough to use it with graphql queries and mutations. Though I&#39;ll add direct methods for each query and mutations too...</p>
+			<a href="#🤟-contributions" id="🤟-contributions" style="color: inherit; text-decoration: none;">
+				<h2>🤟 Contributions</h2>
+			</a>
+			<p>Contributions, issues and feature requests are welcome!</p>
+			<p>if you feel that something is missing, feel free to create an <a href="https://github.com/PiyushSuthar/anilist-node-api/issues">Issue</a>.</p>
+			<a href="#❤-support" id="❤-support" style="color: inherit; text-decoration: none;">
+				<h2>❤ Support</h2>
+			</a>
+			<p>Almost all the project I make are Open Source. To keep me supporting, consider supporting.</p>
+			<p>Do ⭐ this Project.</p>
+			<p>Well, I&#39;ll meet you on Mars.</p>
+			<p><code>Shinzou Wo Sasageyo ❤</code></p>
+			<hr>
+			<p>Made with ❤ and TypeScript.</p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
 		<section class="tsd-panel-group tsd-index-group">

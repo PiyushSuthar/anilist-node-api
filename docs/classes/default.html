@@ -2713,6 +2713,9 @@ img {
 				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a href="default.html#api" class="tsd-kind-icon">api</a>
 				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="default.html#token" class="tsd-kind-icon">token</a>
+				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="default.html#generateauthurl" class="tsd-kind-icon">generate<wbr>Auth<wbr>Url</a>
 				</li>
@@ -2720,7 +2723,7 @@ img {
 					<a href="default.html#getaccesstokenfromcode" class="tsd-kind-icon">get<wbr>Access<wbr>Token<wbr>From<wbr>Code</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
-					<a href="default.html#getme" class="tsd-kind-icon">get<wbr>Me</a>
+					<a href="default.html#setaccesstoken" class="tsd-kind-icon">set<wbr>Access<wbr>Token</a>
 				</li>
 				<li class=" tsd-kind-method tsd-parent-kind-class">
 					<a href="default.html#usegraphql" class="tsd-kind-icon">use<wbr>GraphQL</a>
@@ -2762,6 +2765,7 @@ img {
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="default.html#api" class="tsd-kind-icon">api</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="default.html#token" class="tsd-kind-icon">token</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
@@ -2769,7 +2773,7 @@ img {
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#generateauthurl" class="tsd-kind-icon">generate<wbr>Auth<wbr>Url</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#getaccesstokenfromcode" class="tsd-kind-icon">get<wbr>Access<wbr>Token<wbr>From<wbr>Code</a></li>
-							<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#getme" class="tsd-kind-icon">get<wbr>Me</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#setaccesstoken" class="tsd-kind-icon">set<wbr>Access<wbr>Token</a></li>
 							<li class="tsd-kind-method tsd-parent-kind-class"><a href="default.html#usegraphql" class="tsd-kind-icon">use<wbr>GraphQL</a></li>
 						</ul>
 					</section>
@@ -2782,20 +2786,17 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new default<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
+					<li class="tsd-signature tsd-kind-icon">new default<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Options</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="default.html" class="tsd-signature-type" data-tsd-kind="Class">default</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/3006cc8/src/index.ts#L15">index.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/ab88dcd/src/index.ts#L16">index.ts:16</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
-							<li>
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> token: <span class="tsd-signature-type">string</span></h5>
-							</li>
 							<li>
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Options</span></h5>
 							</li>
@@ -2813,7 +2814,17 @@ img {
 				<div class="tsd-signature tsd-kind-icon">api<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/3006cc8/src/index.ts#L15">index.ts:15</a></li>
+						<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/ab88dcd/src/index.ts#L15">index.ts:15</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="token" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> token</h3>
+				<div class="tsd-signature tsd-kind-icon">token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/ab88dcd/src/index.ts#L16">index.ts:16</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2830,7 +2841,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/3006cc8/src/index.ts#L27">index.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/ab88dcd/src/index.ts#L36">index.ts:36</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2863,7 +2874,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/3006cc8/src/index.ts#L40">index.ts:40</a></li>
+								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/ab88dcd/src/index.ts#L49">index.ts:49</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2877,19 +2888,33 @@ img {
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-				<a name="getme" class="tsd-anchor"></a>
-				<h3>get<wbr>Me</h3>
+				<a name="setaccesstoken" class="tsd-anchor"></a>
+				<h3>set<wbr>Access<wbr>Token</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">get<wbr>Me<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					<li class="tsd-signature tsd-kind-icon">set<wbr>Access<wbr>Token<span class="tsd-signature-symbol">(</span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/3006cc8/src/index.ts#L85">index.ts:85</a></li>
+								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/ab88dcd/src/index.ts#L32">index.ts:32</a></li>
 							</ul>
 						</aside>
-						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Set access token to the instance.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>token: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The accessToken of the User.</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -2903,7 +2928,7 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/3006cc8/src/index.ts#L77">index.ts:77</a></li>
+								<li>Defined in <a href="https://github.com/PiyushSuthar/anilist-node-api/blob/ab88dcd/src/index.ts#L86">index.ts:86</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
