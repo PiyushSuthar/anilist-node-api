@@ -15,9 +15,10 @@ I won't recommend using it in production, yet... (Though I'm using 🙄)
 
 ## 🔗 Installation
 
-Not yet published :p
-
-Will do it soon.
+```sh
+# npm install anilist-node-api
+yarn add anilist-node-api
+```
 
 ## ⚡️ Usage
 
@@ -46,7 +47,8 @@ yarn add anilist-node-api
 Now we can actually write code.
 
 ```js
-const AniList = require("anilist-node-api");
+const AniList = require("anilist-node-api").default;
+// import Anilist from 'anilist-node-api'
 const app = require("express")(); // Express
 
 // Get your ClientId and ClientSecret from your Anilist Account.

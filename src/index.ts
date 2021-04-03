@@ -33,6 +33,10 @@ class Anilist {
         this.token = token
     }
 
+    /**
+     * Generate Auth Url to authenticate users.
+     * @param options Auth Url Options 
+     */
     generateAuthUrl({ state }: {
         /**
          * Data you would like to share to the callback.

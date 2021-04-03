@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "Node wrapper around Anilist Graphql Api.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/piyushsuthar/anilist-node-api",
   "author": "Piyush Suthar <32237558+PiyushSuthar@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prepublish": "tsc",
+    "prepare": "tsc",
     "doc": "typedoc",
     "serve": "serve docs"
   },
