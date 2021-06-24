@@ -9,7 +9,6 @@ dist
 
 # Lock files
 yarn.lock
-package-lock.json
 
 # Env Files
 .env
