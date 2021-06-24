@@ -18,7 +18,7 @@ jobs:
         git add .
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Automated Doc Build" -a | exit 0    
+        git commit -m ":memo: Build: Docs" -a | exit 0    
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
